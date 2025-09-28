@@ -75,3 +75,7 @@ junit*.xml
 
 # --- My custom ignores ---
 # Keep configs and code, ignore heavy generated stuff
+
+# PyCharm
+.idea/
+*.iml
