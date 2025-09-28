@@ -1,0 +1,77 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+*.manifest
+*.spec
+
+# --- Environments ---
+.venv/
+venv/
+ENV/
+env/
+*.env
+*.venv
+.conda/
+
+# --- Jupyter / notebooks ---
+.ipynb_checkpoints/
+*.ipynb_save
+*.ipynb_checkpoints
+
+# --- IDEs & tools ---
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# --- Logs & debug ---
+*.log
+*.out
+*.err
+logs/
+wandb/
+mlruns/
+lightning_logs/
+
+# --- Data / model outputs ---
+data/raw/
+data/processed/ML_processed_image/
+data/processed/digital_png/
+data/processed/metadata.tsv
+outputs/
+checkpoints/
+runs/
+*.pt
+*.pth
+*.ckpt
+*.h5
+*.onnx
+*.npz
+*.npy
+
+# --- OS junk ---
+.DS_Store
+Thumbs.db
+
+# --- Coverage / test ---
+htmlcov/
+.tox/
+.nox/
+.coverage
+coverage.xml
+*.cover
+*.py,cover
+.cache
+.pytest_cache/
+junit*.xml
+
+# --- My custom ignores ---
+# Keep configs and code, ignore heavy generated stuff
