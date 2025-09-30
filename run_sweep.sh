@@ -58,12 +58,12 @@ if [[ "${ENABLE_MPS}" -eq 1 && "${GPU_IDS[0]}" != "cpu" ]]; then
   fi
 fi
 
-LRs=("1e-4" "3e-4" "1e-3")
-WDs=("0.0" "1e-4" "1e-3")
+LRs=("1e-4" "5e-5" "1e-6" 1e-8")
+WDs=("0.0" "1e-4" "1e-3" "1e-5")
 DOs=("0.0" "0.2" "0.5")
 LOSSES=("ce" "focal" "bce" "wbce")
 FOCAL_GAMMAS=("1.0" "2.0")
-WARMUPS=("0" "500" "1000")
+WARMUPS=("0")
 COSINE=("0" "1")
 
 SUMMARY="${OUT_BASE}/sweep_results.csv"
