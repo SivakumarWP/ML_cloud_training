@@ -5,7 +5,7 @@ set -euo pipefail
 MODEL="resnet18"
 # If --jobs is not provided, we compute it as NUM_GPUS * PER_GPU
 JOBS=""
-PER_GPU=20              # default: 30 jobs per GPU (~2 GB/job fits on 80 GB A100)
+PER_GPU=30              # default: 30 jobs per GPU (~2 GB/job fits on 80 GB A100)
 ENABLE_MPS=0
 FORCE=0
 STOP_ON_ERROR=0
@@ -58,7 +58,7 @@ if [[ "${ENABLE_MPS}" -eq 1 && "${GPU_IDS[0]}" != "cpu" ]]; then
   fi
 fi
 
-LRs=("1e-4" "5e-5" "1e-6" "1e-8")
+LRs=("1e-4" "5e-5" "1e-6" 1e-8")
 WDs=("0.0" "1e-4" "1e-3" "1e-5")
 DOs=("0.0" "0.2" "0.5")
 LOSSES=("ce" "focal" "bce" "wbce")
@@ -166,7 +166,7 @@ if command -v parallel >/dev/null 2>&1; then
 else
   echo "[WARN] GNU parallel not found; running sequentially."
   while IFS= read -r line; do
-    eval "${line}" || { [[ "${STOP_ON_ERROR}" -eq 1 ]] && exit 1; }
+    bash -c "${line}" || { [[ "${STOP_ON_ERROR}" -eq 1 ]] && exit 1; }
   done < "${CMDS_FILE}"
 fi
 

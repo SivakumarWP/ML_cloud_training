@@ -9,14 +9,14 @@ from typing import List, Dict
 # OUTPUTS_DIR = Path("outputs")
 
 # point DATA_ROOT anywhere you like (optional)
-DATA_ROOT = Path("/Users/sivakumarvaradharajan/PycharmProjects/ML_development_pipeline/ml_model/models/latest")
+DATA_ROOT = Path("/workspace/ML_cloud_training/data/final_bucket")
 
 # folder that contains the images referenced by the metadata
-IMAGES_DIR = Path("/Users/sivakumarvaradharajan/Desktop/Dataset_T3.0/final_bucket")
+IMAGES_DIR = Path("/workspace/ML_cloud_training/data/final_bucket")
 # ^ adjust if your images are directly under dummy_training (then drop /images)
 
 # the *file* (not folder) for your metadata: csv or tsv both fine if loader supports it
-METADATA_TSV = Path("/Users/sivakumarvaradharajan/Desktop/Dataset_T3.0/final_bucket/pair_log.csv")
+METADATA_TSV = Path("/workspace/ML_cloud_training/data/final_bucket/pair_log.csv")
 #                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 #                                                <-- must be a file path, e.g. metadata.csv or metadata.tsv
 
@@ -36,8 +36,10 @@ class ClassConfig:
 # ====== TRAINING CONFIG (ResNet-18) ======
 @dataclass
 class TrainResNet18Config:
-    images_dir: Path = IMAGES_DIR
-    metadata_tsv: Path = METADATA_TSV
+    #images_dir: Path = IMAGES_DIR
+    #metadata_tsv: Path = METADATA_TSV
+    images_dir    = Path("/workspace/ML_cloud_training/data/final_bucket")
+    metadata_tsv  = Path("/workspace/ML_cloud_training/data/final_bucket/pair_log.csv")
     out_dir: Path = OUTPUTS_DIR / "resnet18"
     img_size: int = 224
     batch_size: int = 64 #32

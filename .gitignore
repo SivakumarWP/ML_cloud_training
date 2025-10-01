@@ -79,3 +79,6 @@ junit*.xml
 # PyCharm
 .idea/
 *.iml
+
+data/*
+*.png
